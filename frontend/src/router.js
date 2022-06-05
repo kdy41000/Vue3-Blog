@@ -22,7 +22,7 @@ const routes = [
         path: "/detail/:listNo",
         name: 'BlogDetail',
         component: BlogDetail,
-        children : [
+        children : [  // Nested routes
             {
                 path: "author",
                 component: AuthorPage
