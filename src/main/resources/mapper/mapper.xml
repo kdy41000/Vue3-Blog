@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.devyoung.blog.mapper.MainMapper" >
+
+	<select id="selectTest" resultType="com.devyoung.blog.vo.MainVO">
+		select * from TB_TEST
+	</select>
+	
+	<select id="getList" resultType="com.devyoung.blog.vo.ListVO">
+		select * from tb_list
+	</select>
+	
+	<select id="getDetail" resultType="com.devyoung.blog.vo.ListVO" parameterType="Integer">
+		select * from tb_list where list_no = #{listNo}
+	</select>
+	
+	<insert id="save" parameterType="com.devyoung.blog.vo.ListVO">
+		insert into tb_list(list_title,list_content,list_date) values(#{listTitle},#{listContent},CURRENT_TIMESTAMP)	
+	</insert>
+	
+	<delete id="delete" parameterType="Integer">
+		delete from tb_list where list_no = #{listNo}
+	</delete>
+	
+</mapper>
